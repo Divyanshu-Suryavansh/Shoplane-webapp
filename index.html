@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./navigation-bar.css">
+        <link rel="stylesheet" href="./footer.css">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+           integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+           crossorigin="anonymous">
+        </script> 
+         <script>
+            $(function(){
+                $('#navigation').load("navigation-bar.html");
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#footer-wrapper').load("footer.html");
+            })
+        </script>  
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="navigation">
+
+            </div>
+            <div id="website-content">
+                <div class="offer-wrapper">
+                    <div class="title">
+                      <h3>Offers & Discounts</h3>
+                    </div>
+                  
+                  <div class="image-container">
+                    <div class="images img1">
+                      <img src="https://imgur.com/96OnkX7.png" alt="" id="banner-image">
+                    </div>
+                    <div class= "nav-container">
+                        <div id="left-nav"><i class="fas fa-chevron-left"></i></div>
+                        <div id="right-nav"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                  </div>
+                 
+                </div>
+                <div id="clothing" class="product-wrapper">
+                    <div class="title">
+                        <h3>Clothing for men & women</h3>
+                      </div>
+                      <div id="clothing-card-wrapper" class="card-wrapper">
+
+                      </div>
+                </div>
+                <div id="accessories" class="product-wrapper">
+                    <div class="title">
+                        <h3>Accessories for men & women</h3>
+                      </div>
+                      <div id="accessory-card-wrapper" class="card-wrapper">
+                          
+                      </div>
+                </div>
+            </div>
+            <div id="footer-wrapper">
+
+            </div>
+            
+        </div>
+
+        <script src="./index.js"></script>
+        <script src="./product.js"></script>
+        <script src="./cart.js"></script>
+    </body>
+</html>
