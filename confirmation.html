@@ -21,7 +21,23 @@
     </head>
     <body>
         <div id="navigation"></div>
+        <div id="main-container">
+            <div id="confirmation-wrapper">
+                <div id="message-wrapper">
+                    <div id="success-wrapper">
+                        <div class="sign-wrapper"><i class="fas fa-check success-sign"></i></div>
+                        <h3 id="success-msg" class="msg">Congratulations! Your order has been placed successfully.</h3>
+                    </div>
+                    <div id="failure-wrapper">
+                        <div><i class="far fa-times-circle failure-sign"></i></div>
+                        <h3 id="failure-msg" class="msg">Sorry! Some error occurred.Please try again in a while.</h3>
+                    </div>
+                </div>
+                <button id="home-redirect">Go Back To Homepage</button>
+            </div>
+        </div>
         <div id="footer-wrapper"></div>
-        
+        <script src="./checkout.js"></script>
+        <script src="./confirmation.js"></script>
     </body>
 </html>
