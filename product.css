@@ -128,6 +128,8 @@ p{
     .product-sect-wrapper{
         display: block;
         width: 100%;
+        padding-bottom:30px;
+      margin-bottom: 30px;
     }
     #product-image{
         width: 100%;
@@ -140,5 +142,9 @@ p{
     }
     #product-name{
         font-size: 32px;
+      padding-top: 50px;
     }
+  #main-container{
+    padding-bottom: 10px;
+  }
 }
