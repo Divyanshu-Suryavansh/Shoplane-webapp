@@ -14,7 +14,7 @@ body{
 }
 
 #checkout-section{
-    max-width: 100%;
+    width: 100%;
     margin-top: 90px;
     margin-left: 50px;
     display: flex;
@@ -163,5 +163,6 @@ body{
         margin-top: 50px;
         margin-bottom: 20px;
     }
+   
 }
 

@@ -1,6 +1,7 @@
 var checkoutWrapper = $('#checkout-cards-wrapper');
 var checkoutSection = $('#checkout-section');
 var finalAmount = 0;
+var productsOrdered = [];
 
 var productList = window.localStorage.getItem('product-list');
 
@@ -12,6 +13,15 @@ for(i=0;i<productList.length;i++)
     console.log(productList[i]);
     createCheckoutCards(productList[i]);
     finalAmount += productList[i].count*productList[i].price;
+    var productInfo = {
+        id : productList[0].id,
+        brand : productList[0].brand,
+        name : productList[0].name,
+        price : productList[0].price,
+        preview : productList[0].preview,
+        isAccessory : productList[0].isAccessory
+   }
+   productsOrdered.push(productInfo);
 }
 
 function createCheckoutCards(val){
@@ -72,36 +82,37 @@ function createFinalValueCard(amount) {
 var amountCard = createFinalValueCard(finalAmount);
 
 
-$('#place-order-btn').onclick = function() {
-    var productsOrdered = [];
-            for(var i=0; i<productList.length; i++) {
-                var productInfo = {
-                    "id": productList[i].id,
-                    "brand": productList[i].brand,
-                    "name": productList[i].name,
-                    "price": productList[i].price,
-                    "preview": productList[i].preview,
-                    "isAccessory": productList[i].isAccessory
-                }
+var OrderBtn = document.getElementById('place-order-btn');
+
+var orderInfo = {
+   amount: finalAmount,
+   products: productsOrdered
+}
+
+var successMsg = document.getElementById('success-wrapper');
+
+
+OrderBtn.onclick = function() {
+
+    console.log('click working');
     
-                productsOrdered.push(productInfo);
-            }
-    
-            var orderInfo = {
-                amount: finalAmount,
-                products: productsOrdered
-            }
-            var http = new XMLHttpRequest();
-    http.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/order',true);
-    http.onreadystatechange = function(){
-        if(this.readyState === 4)
-        {
-            alert('success');
-        }
-        else
-          console.log('some error occured')
-    }
-    http.send(JSON.stringify(orderInfo));
-    
-    }
-    
+    var http = new XMLHttpRequest();
+http.open('POST','https://5d76bf96515d1a0014085cf9.mockapi.io/order',true);
+http.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+http.onreadystatechange = function(){
+if(this.readyState === 4 && http.status == 200)
+{
+    console.log(http.status);
+    location.assign('./confirmation.html');
+    localStorage.setItem("response-message","success");
+    localStorage.setItem("product-list","");    
+}
+else
+  console.log(http.status);
+  location.assign('./confirmation.html');
+  localStorage.setItem("response-message","failure"); 
+}
+http.send(JSON.stringify(orderInfo));
+}
+
