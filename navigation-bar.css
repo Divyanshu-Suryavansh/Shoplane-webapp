@@ -46,6 +46,7 @@ body{
     font-size: 28px;
     position: relative;
     cursor: pointer;
+    user-select: none;
 }
 
 .logo>p{
@@ -222,26 +223,17 @@ body{
     }
 }
 
-@media only screen and (max-width: 450px){
-    
-    .menu-wrapper{
+@media only screen and (max-width: 525px){
+  .menu-wrapper{
         display: none;
     }
+}
+
+@media only screen and (max-width: 450px){
+    
+    
     #nav-bar{
         padding: 0 20px;
-    }
-    .footer{
-      display: block;
-      height: fit-content;
-    }
-    .footer-options{
-        width: 100%;
-        padding-left: 10px;
-        display: flex;
-    }
-    .footer-options>p{
-        font-size: 14px;
-        width: 20%;
-        padding-top: 30px;
+        top: 0;
     }
 }
