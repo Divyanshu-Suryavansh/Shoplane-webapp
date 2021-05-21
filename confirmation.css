@@ -1,0 +1,88 @@
+#main-container{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 80px;
+
+}
+
+#confirmation-wrapper{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(24, 14, 14);
+    opacity: 0.9;
+    margin-top: 50px;
+    padding: auto;
+    text-align: center;
+}
+
+#home-redirect{
+    padding: 10px 40px;
+    background-color: #ecb50f;
+    color: #fff;
+    border-radius: 18px;
+    margin: 40px auto;
+    border: none;
+    box-shadow:2px 0px 6px rgb(87, 81, 81);
+    cursor: pointer;
+}
+
+#message-wrapper{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.sign-wrapper{
+    border: 8px solid #4F8A10;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.failure-sign{
+    color: rgb(219, 47, 47);
+    font-size: 100px;
+}
+
+.success-sign{
+    color: #4F8A10;
+    font-size: 70px;
+}
+
+.msg{
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    line-height: 40px;
+    font-weight: 600;  
+}
+
+#success-msg{
+    color: #4F8A10;
+}
+
+#failure-msg{
+    color: rgb(233, 44, 44);
+}
+
+#success-wrapper{
+    display: none;
+    margin-top: 40px;
+}
+
+#failure-wrapper{
+    display: none;
+    margin-top: 40px;
+}
+
+@media (max-width:450px) {
+  #main-container{
+    padding-bottom: 100px;
+  }
+  .msg{
+    font-size: 20px;
+  }
+}
