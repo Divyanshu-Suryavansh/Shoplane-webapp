@@ -42,6 +42,16 @@
     margin-top: 5px;
 }
 
+#edyoda-logo{
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+
+#edyoda-logo img{
+  width: 70px;
+}
+
 @media (max-width: 660px){
   
   .footer{
@@ -86,4 +96,5 @@
     padding-left: 20px;
   }
 }
+
 
